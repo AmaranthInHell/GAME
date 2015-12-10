@@ -13,7 +13,8 @@ namespace GameNameRPG.Characters
         protected int healthPoints;
         protected int stepsPerMove;
 
-        protected Creature(Position position, char objectSymbol,int damage,int healthPoints,int stepsPerMove) : base(position, objectSymbol)
+        protected Creature(Position position, char objectSymbol,int damage,int healthPoints,int stepsPerMove)
+            : base(position, objectSymbol)
         {
             this.damage = damage;
             this.healthPoints = healthPoints;
@@ -42,6 +43,7 @@ namespace GameNameRPG.Characters
 
         public void Move(string direction)
         {
+            this.position.X++;
             throw new NotImplementedException();
         }
     }

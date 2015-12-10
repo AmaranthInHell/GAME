@@ -9,27 +9,31 @@ namespace GameNameRPG
 {
     public abstract class GameObject
     {
-        private Position position;
-        private char objectSymbol;
+        protected Position position;
+        protected char objectSymbol;
 
         protected GameObject(Position position, char objectSymbol)
         {
             this.Position = position;
-            this.ObjectSymbol = objectSymbol;
-           
+            this.ObjectSymbol = objectSymbol;          
         }
+
         public Position Position
         {
-            get { return this.position; }
+            get 
+            {
+                return this.position; 
+            }
             set
             {
-                if (value.X<0 || value.Y < 0)
+                if (value.X < 0 || value.Y < 0)
                 {
                     throw new ObjectOutOfMap("The object cannot be outside of the map");
                 }
                 this.position = value;
             }
         }
+
         public char ObjectSymbol
         {
             get { return this.objectSymbol; }

@@ -16,7 +16,7 @@ namespace GameNameRPG.Creatures
         private const int STEPS_PER_MOVE=3;
 
         public Hunter(Position position, char objectSymbol,string name) 
-            : base(position, objectSymbol, DAMAGE, HEALTH_POINTS, STEPS_PER_MOVE,name)
+            : base(position, objectSymbol, DAMAGE, HEALTH_POINTS, STEPS_PER_MOVE, name)
         {
 
         }
