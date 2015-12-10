@@ -11,7 +11,7 @@ namespace GameNameRPG.Creatures
 {
     public abstract class Hero : Creature, IHero
     {
-        protected Hero(Position position, char objectSymbol, int damage, int healthPoints, int stepsPerMove) 
+        protected Hero(Position position, char objectSymbol, int damage, int healthPoints, int stepsPerMove, string name) 
             : base(position, objectSymbol, damage, healthPoints, stepsPerMove)
         {
         }

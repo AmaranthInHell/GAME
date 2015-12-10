@@ -8,6 +8,6 @@ namespace GameNameRPG.Interfaces
 {
     public interface IMove
     {
-        void Move();
+        void Move(string direction);
     }
 }

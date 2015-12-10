@@ -9,9 +9,9 @@ namespace GameNameRPG.Characters
 {
     public abstract class Creature : GameObject, ICreature
     {
-        private int damage;
-        private int healthPoints;
-        private int stepsPerMove;
+        protected int damage;
+        protected int healthPoints;
+        protected int stepsPerMove;
 
         protected Creature(Position position, char objectSymbol,int damage,int healthPoints,int stepsPerMove) : base(position, objectSymbol)
         {
@@ -40,7 +40,7 @@ namespace GameNameRPG.Characters
             throw new NotImplementedException();
         }
 
-        public void Move()
+        public void Move(string direction)
         {
             throw new NotImplementedException();
         }

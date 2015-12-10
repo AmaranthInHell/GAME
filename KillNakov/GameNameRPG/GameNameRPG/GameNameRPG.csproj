@@ -44,10 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Creep.cs" />
     <Compile Include="Creatures\Hero.cs" />
     <Compile Include="Creatures\Hunter.cs" />
     <Compile Include="Creatures\Paladin.cs" />
-    <Compile Include="Creatures\Shaman.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Exceptions\ObjectOutOfMap.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
