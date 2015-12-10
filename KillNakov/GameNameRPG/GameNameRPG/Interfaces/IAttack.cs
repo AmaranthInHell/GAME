@@ -10,6 +10,6 @@ namespace GameNameRPG.Interfaces
     public interface IAttack
     {
         int Damage { get; }
-        void Attack(Character enemy);
+        void Attack(Creature enemy);
     }
 }

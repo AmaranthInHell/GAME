@@ -9,9 +9,12 @@ namespace GameNameRPG.Items.Potions
     class ManaPotion : Item
     {
         private int manaRestore;
+
         public ManaPotion(Position position, char itemSymbol, int manaRestore) : base(position, itemSymbol)
         {
             this.ManaRestore = manaRestore;
         }
+
+        public int ManaRestore { get; set; }
     }
 }

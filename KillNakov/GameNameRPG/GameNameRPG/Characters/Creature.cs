@@ -7,8 +7,12 @@ using GameNameRPG.Interfaces;
 
 namespace GameNameRPG.Characters
 {
-    public abstract class Character : GameObject, ICharacter
+    public abstract class Creature : GameObject, ICharacter
     {
+        protected Creature(Position position, char objectSymbol) : base(position, objectSymbol)
+        {
+        }
+
         public int Damage
         {
             get
@@ -41,7 +45,7 @@ namespace GameNameRPG.Characters
             }
         }
 
-        public void Attack(Character enemy)
+        public void Attack(Creature enemy)
         {
             throw new NotImplementedException();
         }
