@@ -10,16 +10,22 @@ namespace GameNameRPG.Creatures
 {
     class Creep : Creature
     {
+        private const int ASCII_A = 65;
         private const int STEPS_PER_MOVE = 1;
 
-        public Creep(Position position, char objectSymbol) 
+        public Creep(Position position, char objectSymbol)
             : base(position, objectSymbol, -1, -1, STEPS_PER_MOVE)
         {
-            //todo: 
-            //damage,healthPoints will decided according objectSymbols for Creeps: [A,..,E],where A==1, F==5
-            //if objectSymbol is 'D' (=4), damage is 35, hp will 160 
-            //dmg = 20 + objectSymbol * 5
-            //hp = 100 + objectSymbol * 20
+            decideStats(objectSymbol);
         }
+
+        private void decideStats(char symbol)
+        {
+            int strenght = (int)symbol - ASCII_A;
+
+            this.damage = 20 + strenght * 5;
+            this.healthPoints = 100 + strenght * 20;
+        }
+
     }
 }
