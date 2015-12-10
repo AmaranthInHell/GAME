@@ -9,7 +9,7 @@ namespace GameNameRPG.Interfaces
 {
     public interface ICollect
     {
-        IEnumerable<Item> Bag { get; }
+        IEnumerable<Item> Bag { get; set; }
         void CollectItem(Item item);
     }
 }

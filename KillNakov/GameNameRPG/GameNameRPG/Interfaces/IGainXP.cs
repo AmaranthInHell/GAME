@@ -9,6 +9,6 @@ namespace GameNameRPG.Interfaces
     public interface IGainXP
     {
         int Expirience { get; }
-        void LevelUp();
+        void UpdateExperience();
     }
 }

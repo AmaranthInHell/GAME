@@ -8,8 +8,6 @@ namespace GameNameRPG.Interfaces
 {
     public interface IDeath
     {
-        int HealthPoints { get; }
-        
-
+        int HealthPoints { get; set; }
     }
 }

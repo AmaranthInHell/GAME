@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameNameRPG.Interfaces
 {
-    public interface IOutOfMana
+    public interface ICreature : IAttack,IMove,IDeath
     {
-        int NoMana { get; }
+
     }
 }

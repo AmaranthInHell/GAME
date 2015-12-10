@@ -11,5 +11,6 @@ namespace GameNameRPG.Interfaces
     {
         int Damage { get; }
         void Attack(Creature enemy);
+        void UnnexpectedAttack(Creature enemy);
     }
 }

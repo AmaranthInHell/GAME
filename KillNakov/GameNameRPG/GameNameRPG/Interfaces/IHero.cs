@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameNameRPG.Interfaces
 {
-    public interface IDrink
+    public interface IHero : ICreature, IHeal, IGainXP, ICollect
     {
-        void DrinkManaPot();
-        void DrinkHealthPot();
+        string Name { get; }
     }
 }

@@ -43,20 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Characters\Creature.cs" />
+    <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Hero.cs" />
+    <Compile Include="Creatures\Hunter.cs" />
+    <Compile Include="Creatures\Paladin.cs" />
+    <Compile Include="Creatures\Shaman.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Exceptions\ObjectOutOfMap.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
-    <Compile Include="Interfaces\ICharacter.cs" />
+    <Compile Include="Interfaces\ICreature.cs" />
     <Compile Include="Interfaces\ICollect.cs" />
     <Compile Include="Interfaces\IDeath.cs" />
-    <Compile Include="Interfaces\IDefend.cs" />
-    <Compile Include="Interfaces\IDrink.cs" />
     <Compile Include="Interfaces\IGainXP.cs" />
     <Compile Include="Interfaces\IHeal.cs" />
     <Compile Include="Interfaces\IMove.cs" />
-    <Compile Include="Interfaces\IOutOfMana.cs" />
-    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Interfaces\IHero.cs" />
     <Compile Include="Items\Potions\HealthPotion.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\ItemState.cs" />

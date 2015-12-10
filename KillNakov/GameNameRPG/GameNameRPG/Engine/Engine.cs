@@ -13,7 +13,7 @@ namespace GameNameRPG.Engine
     {
         private IInput input;
         private IRenderer renderer;
-        private List<ICharacter> characters;
+        private List<ICreature> characters;
         private List<Item> items;
 
 
@@ -21,7 +21,7 @@ namespace GameNameRPG.Engine
         {
             this.input = input;
             this.renderer = renderer;
-            this.characters = new List<ICharacter>();
+            this.characters = new List<ICreature>();
             this.items = new List<Item>();
         }
         public bool IsRunning { get; set; }

@@ -11,6 +11,7 @@ namespace GameNameRPG
     {
         private Position position;
         private char objectSymbol;
+
         protected GameObject(Position position, char objectSymbol)
         {
             this.Position = position;
