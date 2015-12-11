@@ -16,9 +16,9 @@ namespace GameNameRPG.Characters
         protected Creature(Position position, char objectSymbol,int damage,int healthPoints,int stepsPerMove)
             : base(position, objectSymbol)
         {
-            this.damage = damage;
-            this.healthPoints = healthPoints;
-            this.stepsPerMove = stepsPerMove;
+            this.Damage = damage;
+            this.HealthPoints = healthPoints;
+            this.StepsPerMove = stepsPerMove;
         }
 
         public int Damage
@@ -30,6 +30,7 @@ namespace GameNameRPG.Characters
         {
             get; set;
         }
+        public int StepsPerMove { get; private set; }
 
         public void Attack(Creature enemy)
         {
@@ -41,25 +42,7 @@ namespace GameNameRPG.Characters
             throw new NotImplementedException();
         }
 
-        public void Move(string direction)
-        {
-            switch (direction)
-            {
-                case "up":
-                    this.position.Y--;
-                        break;
-                case "down":
-                    this.position.Y++;
-                    break;
-                case "right":
-                    this.position.X++;
-                    break;
-                case "left":
-                    this.position.X--;
-                    break;
-            }
-            
-            
-        }
+        public abstract void Move(string direction);
+       
     }
 }

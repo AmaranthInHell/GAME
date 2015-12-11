@@ -10,10 +10,12 @@ using GameNameRPG.Equipment.Items;
 
 namespace GameNameRPG.Creatures
 {
-    public abstract class Hero : Creature, IHero
+    public class Hero : Creature, IHero
     {
-        protected Hero(Position position, char objectSymbol, int damage, int healthPoints, int stepsPerMove, string name) 
-            : base(position, objectSymbol, damage, healthPoints, stepsPerMove)
+        private string name;
+
+        public Hero(Position position, char objectSymbol, string name) 
+            : base(position, objectSymbol, 0, 0, 0)
         {
         }
 
@@ -54,7 +56,17 @@ namespace GameNameRPG.Creatures
         {
             get
             {
-                throw new NotImplementedException();
+                return this.name;
+            }
+
+            private set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException("name", "Name cannot be null, empty or whitespace.");
+                }
+
+                this.name = value;
             }
         }
 
@@ -76,6 +88,24 @@ namespace GameNameRPG.Creatures
         public void UpdateExperience()
         {
             throw new NotImplementedException();
+        }
+        public override void Move(string direction)
+        {
+            switch (direction)
+            {
+                case "up":
+                    this.position.Y--;
+                    break;
+                case "down":
+                    this.position.Y++;
+                    break;
+                case "right":
+                    this.position.X++;
+                    break;
+                case "left":
+                    this.position.X--;
+                    break;
+            }
         }
     }
 }

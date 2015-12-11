@@ -10,5 +10,6 @@ namespace GameNameRPG.UI
     {
         void WriteLine(string message, params object[] parameters);
         void ClearMap();
+
     }
 }

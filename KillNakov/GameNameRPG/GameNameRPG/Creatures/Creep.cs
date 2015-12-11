@@ -26,6 +26,10 @@ namespace GameNameRPG.Creatures
             this.damage = 20 + strenght * 5;
             this.healthPoints = 100 + strenght * 20;
         }
+        public override void Move(string direction)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

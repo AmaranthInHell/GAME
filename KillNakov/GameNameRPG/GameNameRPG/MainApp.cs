@@ -10,6 +10,7 @@ namespace GameNameRPG
     {
         public static void Main(string[] args)
         {
+
         }
     }
 }
