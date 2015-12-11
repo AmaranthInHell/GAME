@@ -43,8 +43,23 @@ namespace GameNameRPG.Characters
 
         public void Move(string direction)
         {
-            this.position.X++;
-            throw new NotImplementedException();
+            switch (direction)
+            {
+                case "up":
+                    this.position.Y--;
+                        break;
+                case "down":
+                    this.position.Y++;
+                    break;
+                case "right":
+                    this.position.X++;
+                    break;
+                case "left":
+                    this.position.X--;
+                    break;
+            }
+            
+            
         }
     }
 }

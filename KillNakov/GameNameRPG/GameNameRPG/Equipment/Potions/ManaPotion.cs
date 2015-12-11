@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameNameRPG.Items.Potions
+namespace GameNameRPG.Equipment.Potions
 {
-    class ManaPotion : Item
+    class ManaPotion : Potion
     {
         private int manaRestore;
 

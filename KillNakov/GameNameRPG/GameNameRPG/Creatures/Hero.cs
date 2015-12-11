@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GameNameRPG.Items;
+using GameNameRPG.Equipment.Potions;
+using GameNameRPG.Equipment.Items;
 
 namespace GameNameRPG.Creatures
 {
@@ -16,7 +17,19 @@ namespace GameNameRPG.Creatures
         {
         }
 
-        public IEnumerable<Item> Bag
+        public IEnumerable<Potion> Bag
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+        public IEnumerable<Item> Inventory
         {
             get
             {
@@ -35,7 +48,7 @@ namespace GameNameRPG.Creatures
             {
                 throw new NotImplementedException();
             }
-        }
+        }      
 
         public string Name
         {
@@ -45,7 +58,12 @@ namespace GameNameRPG.Creatures
             }
         }
 
-        public void CollectItem(Item item)
+        public void BuyItem(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CollectPotion(Potion potion)
         {
             throw new NotImplementedException();
         }

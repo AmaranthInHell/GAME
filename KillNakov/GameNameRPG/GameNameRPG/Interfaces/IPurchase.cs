@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GameNameRPG.Equipment.Potions;
+using GameNameRPG.Equipment.Items;
 
 namespace GameNameRPG.Interfaces
 {
-    public interface ICollect
+    public interface IPurchase
     {
-        IEnumerable<Potion> Bag { get; set; }
-        void CollectPotion(Potion potion);
+        IEnumerable<Item> Inventory { get; set; }
+        void BuyItem(Item item);
     }
 }

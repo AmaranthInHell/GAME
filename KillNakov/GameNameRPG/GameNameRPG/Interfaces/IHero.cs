@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameNameRPG.Interfaces
 {
-    public interface IHero : ICreature, IHeal, IGainXP, ICollect
+    public interface IHero : ICreature, IHeal, IGainXP, ICollect, IPurchase
     {
         string Name { get; }
     }

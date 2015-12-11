@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameNameRPG.Items
+namespace GameNameRPG.Equipment.Potions
 {
-    public enum ItemState
+    public enum PotionState
     {
-       Available,
-       Collected
+        Available,
+        Collected
     }
 }
