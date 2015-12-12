@@ -31,5 +31,14 @@ namespace GameNameRPG.Creatures
             throw new NotImplementedException();
         }
 
+        public override void Attack(Creature enemy)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void UnnexpectedAttack(Creature enemy)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

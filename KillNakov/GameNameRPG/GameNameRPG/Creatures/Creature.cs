@@ -21,27 +21,12 @@ namespace GameNameRPG.Characters
             this.StepsPerMove = stepsPerMove;
         }
 
-        public int Damage
-        {
-            get; set;
-        }
+        public int Damage { get; set; }
+        public int HealthPoints { get; set; }
+        public int StepsPerMove { get; set; }
 
-        public int HealthPoints
-        {
-            get; set;
-        }
-        public int StepsPerMove { get; private set; }
-
-        public void Attack(Creature enemy)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UnnexpectedAttack(Creature enemy)
-        {
-            throw new NotImplementedException();
-        }
-
+        public abstract void Attack(Creature enemy);
+        public abstract void UnnexpectedAttack(Creature enemy);
         public abstract void Move(string direction);
        
     }

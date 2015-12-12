@@ -14,8 +14,8 @@ namespace GameNameRPG.Creatures
     {
         private string name;
 
-        public Hero(Position position, char objectSymbol, string name) 
-            : base(position, objectSymbol, 0, 0, 0)
+        public Hero(Position position, char objectSymbol, string name, int damage, int healthPoints, int stepsPerMove) 
+            : base(position, objectSymbol, damage, healthPoints, stepsPerMove)
         {
         }
 
@@ -59,7 +59,7 @@ namespace GameNameRPG.Creatures
                 return this.name;
             }
 
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -94,18 +94,30 @@ namespace GameNameRPG.Creatures
             switch (direction)
             {
                 case "up":
-                    this.position.Y--;
+                    this.Position = new Position(this.Position.X, this.Position.Y - this.StepsPerMove);
                     break;
                 case "down":
-                    this.position.Y++;
-                    break;
-                case "right":
-                    this.position.X++;
+                    this.Position = new Position(this.Position.X, this.Position.Y + this.StepsPerMove);
                     break;
                 case "left":
-                    this.position.X--;
+                    this.Position = new Position(this.Position.X - this.StepsPerMove, this.Position.Y);
                     break;
+                case "right":
+                    this.Position = new Position(this.Position.X + this.StepsPerMove, this.Position.Y);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("Invalid direction.", "direction");
             }
+        }
+
+        public override void Attack(Creature enemy)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void UnnexpectedAttack(Creature enemy)
+        {
+            throw new NotImplementedException();
         }
     }
 }
