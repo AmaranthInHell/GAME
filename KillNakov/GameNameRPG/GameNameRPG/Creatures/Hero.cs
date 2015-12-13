@@ -119,5 +119,9 @@ namespace GameNameRPG.Creatures
         {
             throw new NotImplementedException();
         }
+        public override string ToString()
+        {
+            return string.Format("Name: {0}, Damage: {1}, HealthPoints: {2}, StepsPerMove: {3}, ObjectSymbol: {4}", GetType().Name, Damage, HealthPoints, StepsPerMove, ObjectSymbol);
+        }
     }
 }

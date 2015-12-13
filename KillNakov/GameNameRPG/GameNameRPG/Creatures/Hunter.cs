@@ -11,16 +11,18 @@ namespace GameNameRPG.Creatures
 {
     public class Hunter : Hero
     {
-        private const int DAMAGE=30;
-        private const int HEALTH_POINTS=70;
-        private const int STEPS_PER_MOVE=3;
+        private new const int Damage=30;
+        private new const int HealthPoints=70;
+        private new const int StepsPerMove=3;
+        private new const char ObjectSymbol = 'H';
 
         public Hunter(Position position, char objectSymbol,string name) 
-            : base(position, objectSymbol, name, DAMAGE, HEALTH_POINTS, STEPS_PER_MOVE)
+            : base(position, ObjectSymbol, name, Damage, HealthPoints, StepsPerMove)
         {
 
         }
      
-        
+
+
     }
 }

@@ -11,16 +11,17 @@ namespace GameNameRPG.Creatures
 {
     class Paladin : Hero
     {
-        private const int DAMAGE = 50;
-        private const int HEALTH_POINTS = 100;
-        private const int STEPS_PER_MOVE = 1;
+        private new const int Damage = 50;
+        private new const int HealthPoints = 100;
+        private new const int StepsPerMove = 1;
+        private new const char ObjectSymbol = 'P';
 
         public Paladin(Position position, char objectSymbol,string name) 
-            : base(position, objectSymbol, name, DAMAGE, HEALTH_POINTS, STEPS_PER_MOVE)
+            : base(position, ObjectSymbol, name, Damage, HealthPoints, StepsPerMove)
         {
             
         }
+   
 
-        
     }
 }

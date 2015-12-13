@@ -7,6 +7,7 @@ using GameNameRPG.UI;
 using GameNameRPG.Interfaces;
 using GameNameRPG.Equipment.Potions;
 using GameNameRPG.Creatures;
+using GameNameRPG.Exceptions;
 
 
 namespace GameNameRPG.Engine
@@ -40,6 +41,7 @@ namespace GameNameRPG.Engine
             heroName = this.GetHeroName();
             Hero hero = this.CreateHero();
             Console.WriteLine(hero.GetType().Name);
+            Console.WriteLine(hero.Name);
 
             while (this.IsRunning)
             {
@@ -69,7 +71,7 @@ namespace GameNameRPG.Engine
                     this.renderer.WriteLine("HA, ha GET REKT");
                     break;
                 default:
-                    throw new ArgumentException("Unknown command", "command");
+                    throw new ArgumentOutOfRangeException("Unknown command", "command");
             }
         }
 
@@ -98,33 +100,29 @@ namespace GameNameRPG.Engine
         }
         private Hero CreateHero()
         {
-            this.renderer.WriteLine("Please chose a Hero: ");
-            this.renderer.WriteLine("1. Hunter - Damage(30), HealthPoints(70), StePerMove(3)");
-            this.renderer.WriteLine("2. Paladin - Damage(50), HealthPoints(100), StePerMove(1)  ");
-            string chose = this.input.ReadLine();
-                       
-                if (chose == "Hunter" || chose == "hunter")
+            Hero hunter = new Hunter(new Position(0, 0),'H', heroName);
+            Hero paladin = new Paladin(new Position(0, 0), 'P', heroName);
+            this.renderer.WriteLine("Please chose a Hero type: ");
+            this.renderer.WriteLine(hunter.ToString());
+            this.renderer.WriteLine(paladin.ToString());
+            string chose = this.input.ReadLine();         
+           
+            while (string.IsNullOrWhiteSpace(chose) || (chose != "Hunter" && chose != "Paladin"))
                 {
-                    this.hero = new Hunter(new Position(0, 0), 'h', heroName);
+                    this.renderer.WriteLine("Hero name cannot be empty. Please re-enter. ");
+                    chose = this.input.ReadLine();
                 }
-                else if (chose =="Paladin" || chose == "hunter")
-                {
-                    this.hero = new Paladin(new Position(0, 0), 'p', heroName);
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException("Invalid type", "Type");
-                }                    
+            switch (chose)
+            {
+                case "Hunter":
+                    this.hero = hunter;
+                    break;
+                case "Paladin":
+                    this.hero = paladin;
+                        break;
+            }
+            
             return hero;
-
-
-
-
-
-
-
-
-
         }
         
     }

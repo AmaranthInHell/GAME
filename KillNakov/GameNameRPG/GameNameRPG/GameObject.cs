@@ -39,7 +39,7 @@ namespace GameNameRPG
             get { return this.objectSymbol; }
             set
             {
-                if (char.IsUpper(value))
+                if (char.IsLower(value))
                 {
                     throw new ArgumentOutOfRangeException("objectSymbol", "ObjectSymbol must be lower case character");
                 }

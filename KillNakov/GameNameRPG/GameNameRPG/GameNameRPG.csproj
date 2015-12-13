@@ -61,6 +61,7 @@
     <Compile Include="Engine\GameEngine.cs" />
     <Compile Include="Equipment\Items\Sword.cs" />
     <Compile Include="Equipment\Potions\PotionState.cs" />
+    <Compile Include="Exceptions\InvalidHeroType.cs" />
     <Compile Include="Exceptions\ObjectOutOfMap.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\ICreature.cs" />
