@@ -1,4 +1,4 @@
-﻿using GameNameRPG.Characters;
+﻿
 using GameNameRPG.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,10 +11,10 @@ namespace GameNameRPG.Creatures
     class Creep : Creature
     {
         private const int ASCII_A = 65;
-        private const int STEPS_PER_MOVE = 1;
+        private new const int StepsPerMove = 1;
 
         public Creep(Position position, char objectSymbol)
-            : base(position, objectSymbol, -1, -1, STEPS_PER_MOVE)
+            : base(position, objectSymbol, -1, -1, StepsPerMove)
         {
             decideStats(objectSymbol);
         }
@@ -28,17 +28,17 @@ namespace GameNameRPG.Creatures
         }
         public override void Move(string direction)
         {
-            throw new NotImplementedException();
+            switch (direction)
+            {
+                case"up":
+                    break;
+                default:
+                    break;
+            }
         }
 
-        public override void Attack(Creature enemy)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public override void UnnexpectedAttack(Creature enemy)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

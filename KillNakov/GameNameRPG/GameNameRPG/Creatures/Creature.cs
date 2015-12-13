@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GameNameRPG.Interfaces;
 
-namespace GameNameRPG.Characters
+namespace GameNameRPG.Creatures
 {
     public abstract class Creature : GameObject, ICreature
     {
@@ -25,8 +25,14 @@ namespace GameNameRPG.Characters
         public int HealthPoints { get; set; }
         public int StepsPerMove { get; set; }
 
-        public abstract void Attack(Creature enemy);
-        public abstract void UnnexpectedAttack(Creature enemy);
+        public void Attack(Creature enemy)
+        {
+            this.HealthPoints -= this.Damage;
+        }
+        public void RespondAttack(Creature enemy)
+        {
+            this.HealthPoints -= this.Damage / 2;
+        }
         public abstract void Move(string direction);
        
     }

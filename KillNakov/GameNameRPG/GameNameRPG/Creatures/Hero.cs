@@ -1,4 +1,4 @@
-﻿using GameNameRPG.Characters;
+﻿
 using GameNameRPG.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -110,15 +110,7 @@ namespace GameNameRPG.Creatures
             }
         }
 
-        public override void Attack(Creature enemy)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void UnnexpectedAttack(Creature enemy)
-        {
-            throw new NotImplementedException();
-        }
+       
         public override string ToString()
         {
             return string.Format("Name: {0}, Damage: {1}, HealthPoints: {2}, StepsPerMove: {3}, ObjectSymbol: {4}", GetType().Name, Damage, HealthPoints, StepsPerMove, ObjectSymbol);

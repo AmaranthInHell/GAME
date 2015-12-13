@@ -20,7 +20,7 @@ namespace GameNameRPG.Engine
         private List<GameObject> creeps;
         private List<GameObject> items;
         private Hero hero;
-        private ICreature creature;
+        private Creep creep;
         private string heroName;
         
 
@@ -39,9 +39,9 @@ namespace GameNameRPG.Engine
             this.IsRunning = true;
 
             heroName = this.GetHeroName();
-            Hero hero = this.CreateHero();
-            Console.WriteLine(hero.GetType().Name);
-            Console.WriteLine(hero.Name);
+            hero = this.CreateHero();
+            //Console.WriteLine(hero.GetType().Name);
+            //Console.WriteLine(hero.Name);
 
             while (this.IsRunning)
             {
@@ -68,16 +68,70 @@ namespace GameNameRPG.Engine
                     break;
                 case "exit":
                     this.IsRunning = false;
-                    this.renderer.WriteLine("HA, ha GET REKT");
+                    this.renderer.WriteLine("HA, HA GET REKT");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("Unknown command", "command");
             }
         }
+        private void HeroEnterBattle()
+        {
+            this.hero.Attack(this.creep);
+            if (this.creep.HealthPoints <=0)
+            {
+                this.renderer.WriteLine("Good job! You killed an Enemy!");
+                this.creeps.Remove(this.creep as GameObject);
+                return;
+            }
+
+            this.creep.RespondAttack(this.hero);
+            if (this.hero.HealthPoints <= 0)
+            {
+                IsRunning = false;
+                this.renderer.WriteLine("HA, HA NOOB \nGame Over");
+            }
+        }
+        private void CreepEnterBattle()
+        {
+            this.creep.Attack(this.hero);
+            if (this.hero.HealthPoints <= 0)
+            {
+                IsRunning = false;
+                this.renderer.WriteLine("HA, HA NOOB \nGame Over");
+            }
+
+            this.hero.RespondAttack(creep);
+            if (this.creep.HealthPoints <= 0)
+            {
+                this.renderer.WriteLine("Good job! You killed an Enemy!");
+                this.creeps.Remove(creep as GameObject);
+                return;
+            }
+        }
 
         private void MoveHero(string command)
         {
-            
+            this.hero.Move(command);
+            this.creep = this.creeps.Cast<Creep>().FirstOrDefault
+            (c => 
+            c.Position.X == this.hero.Position.X 
+            && c.Position.Y == this.hero.Position.Y
+            && c.HealthPoints > 0);
+            if (this.creep != null)
+            {
+                this.HeroEnterBattle();
+                return;
+            }
+        }
+        private void MoveCreep(string command)
+        {
+            this.creep.Move(command);
+            if (this.hero != null)
+            {
+                this.CreepEnterBattle();
+                return;
+            }
+            this.creep.Move(command);
         }
 
         private void HelpCommand()
