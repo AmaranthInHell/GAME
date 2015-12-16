@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameNameRPG.Exceptions
+namespace GameNameRPG.UI
 {
-    public class ObjectOutOfMap : Exception
+    class Input : IInput
     {
-        public ObjectOutOfMap(string message) :base(message)
+        public string ReadLine()
         {
-
+            return Console.ReadLine();
         }
     }
 }

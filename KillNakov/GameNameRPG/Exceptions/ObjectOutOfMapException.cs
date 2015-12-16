@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GameNameRPG.Exceptions
 {
-    public class InvalidHeroType : Exception
+    public class ObjectOutOfMapException : Exception
     {
-        public InvalidHeroType(string message) :base(message)
+        public ObjectOutOfMapException(string message) :base(message)
         {
 
         }
