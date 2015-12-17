@@ -13,7 +13,8 @@ namespace GameNameRPG.Creatures
         protected int healthPoints;
         protected int stepsPerMove;
 
-        protected Creature(Position position, char objectSymbol,int damage,int healthPoints,int stepsPerMove)
+        protected Creature(Position position, char objectSymbol, int damage, int healthPoints, 
+            int stepsPerMove)
             : base(position, objectSymbol)
         {
             this.Damage = damage;
@@ -33,7 +34,26 @@ namespace GameNameRPG.Creatures
         {
             this.HealthPoints -= this.Damage / 2;
         }
-        public abstract void Move(string direction);
-       
+        public virtual void Move(string direction)
+        {
+            switch (direction)
+            {
+                case "up":
+                    this.Position = new Position(this.Position.X, this.Position.Y - this.StepsPerMove);
+                    break;
+                case "down":
+                    this.Position = new Position(this.Position.X, this.Position.Y + this.StepsPerMove);
+                    break;
+                case "left":
+                    this.Position = new Position(this.Position.X - this.StepsPerMove, this.Position.Y);
+                    break;
+                case "right":
+                    this.Position = new Position(this.Position.X + this.StepsPerMove, this.Position.Y);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("Invalid direction.", "direction");
+            }
+        }
+
     }
 }

@@ -14,7 +14,8 @@ namespace GameNameRPG.Creatures
     {
         private string name;
 
-        public Hero(Position position, char objectSymbol, string name, int damage, int healthPoints, int stepsPerMove) 
+        public Hero(Position position, char objectSymbol, string name,
+            int damage, int healthPoints, int stepsPerMove) 
             : base(position, objectSymbol, damage, healthPoints, stepsPerMove)
         {
         }
@@ -89,31 +90,12 @@ namespace GameNameRPG.Creatures
         {
             throw new NotImplementedException();
         }
-        public override void Move(string direction)
-        {
-            switch (direction)
-            {
-                case "up":
-                    this.Position = new Position(this.Position.X, this.Position.Y - this.StepsPerMove);
-                    break;
-                case "down":
-                    this.Position = new Position(this.Position.X, this.Position.Y + this.StepsPerMove);
-                    break;
-                case "left":
-                    this.Position = new Position(this.Position.X - this.StepsPerMove, this.Position.Y);
-                    break;
-                case "right":
-                    this.Position = new Position(this.Position.X + this.StepsPerMove, this.Position.Y);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("Invalid direction.", "direction");
-            }
-        }
-
+       
        
         public override string ToString()
         {
-            return string.Format("Name: {0}, Damage: {1}, HealthPoints: {2}, StepsPerMove: {3}, ObjectSymbol: {4}", GetType().Name, Damage, HealthPoints, StepsPerMove, ObjectSymbol);
+            return string.Format("Name: {0}, Damage: {1}, HealthPoints: {2}, StepsPerMove: {3}, ObjectSymbol: {4}", 
+                GetType().Name, Damage, HealthPoints, StepsPerMove, ObjectSymbol);
         }
     }
 }
